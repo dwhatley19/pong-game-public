@@ -1,5 +1,5 @@
 To compile/run:
-python game.py
+python game.py < games.txt
 
 You will be asked for a starting scenario number. Enter a number from 0 to 10000; you will then be judging consecutive scenarios from that number.
 
