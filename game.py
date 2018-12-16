@@ -29,6 +29,8 @@ def save_data(data, start):
     if start <= x[0] and x[0] < start + len(data):
       existing[int(x[0])] = True
       out[int(x[0])] = [x[0], (x[1] * x[2] + data[int(x[0]) - start]) / (x[2] + 1), x[2] + 1]
+    else:
+      out[int(x[0])] = x
   for i in range(len(existing)):
     if existing[i] == False and start <= i and i < start + len(data):
       out[i] = [i, data[i - start], 1]
@@ -77,16 +79,19 @@ def user_input(*args):
     elif ch == 'w':
       print(1)
       data.append(1)
+      plt.close()
       sys.exit()
       break
     elif ch == 's':
       print(-1)
       data.append(-1)
+      plt.close()
       sys.exit()
       break
     elif ch == 'd':
       print(0)
       data.append(0)
+      plt.close()
       sys.exit()
 
 start_line = int(input("starting game #? "))
